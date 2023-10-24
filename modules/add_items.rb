@@ -20,4 +20,19 @@ module CreateItems
     @books << new_book
     puts 'Your book has been created'
   end
+
+  def book_cover_state()
+    loop do
+      print 'Enter the book cover state (good/bad): '
+      cover_state_input = gets.chomp.upcase
+      if cover_state_input == 'GOOD'
+        return true
+      elsif cover_state_input == 'BAD'
+        return false
+      else
+        puts 'Invalid option. Please enter "good" or "bad".'
+      end
+    end
+    cover_state
+  end
 end
