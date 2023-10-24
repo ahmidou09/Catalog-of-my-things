@@ -10,8 +10,8 @@ module CreateItems
     print 'Enter the book publisher: '
     publisher = gets.chomp
     cover_state = book_cover_state
-    author = "create_author"
-    genre = "create_genre"
+    author = 'create_author'
+    genre = 'create_genre'
     label = create_label('album')
     new_book = Book.new(publish_date, publisher, cover_state)
     new_book.add_label(label)
