@@ -6,7 +6,7 @@ class App
   def run
     puts 'Welcome to our catalog!'
     loop do
-      op_0
+      operation0
     end
   end
 
@@ -18,16 +18,16 @@ class App
     puts '4) Exit'
   end
 
-  def op_0
+  def operation0
     show_menu
     user_input = gets.chomp.to_i
     case user_input
     when 1
-      op_1
+      operation1
     when 2
-      op_2
+      operation2
     when 3
-      op_3
+      operation3
     when 4
       exit_app
     else
@@ -35,7 +35,7 @@ class App
     end
   end
 
-  def op_1
+  def operation1
     puts " \n Select an option by number:"
     puts '1) List all books'
     puts '2) List all music albums'
@@ -50,13 +50,13 @@ class App
     when 3
       'list all games'
     when 4
-      op_0
+      operation0
     else
       puts 'Invalid option'
     end
   end
 
-  def op_2
+  def operation2
     puts " \n Select an option by number:"
     puts '1) List all genres (e.g \'Comedy\', \'Thriller\')'
     puts '2) List all labels (e.g. \'Gift\', \'New\')'
@@ -71,13 +71,13 @@ class App
     when 3
       'list all authors'
     when 4
-      op_0
+      operation0
     else
       puts 'Invalid option'
     end
   end
 
-  def op_3
+  def operation3
     puts " \n Select an option by number:"
     puts '1) Add a book'
     puts '2) Add a music album'
@@ -92,7 +92,7 @@ class App
     when 3
       'add game'
     when 4
-      op_0
+      operation0
     else
       puts 'Invalid option'
     end
