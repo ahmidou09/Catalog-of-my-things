@@ -1,10 +1,30 @@
+require_relative 'modules/add_items'
+require_relative 'modules/list_items'
+require_relative 'modules/list_categories'
+require_relative 'modules/save_categories'
+require_relative 'modules/load_categories'
+require_relative 'modules/save_items'
+require_relative 'modules/load_items'
+
 class App
+  include CreateItems
+  include ListItems
+  include ListCategories
+  include SaveCategories
+  include LoadCategories
+  include SaveItems
+  include LoadItems
+
   def initialize
     @items = []
+    @labels = []
+    @books = []
   end
 
   def run
     puts 'Welcome to our catalog!'
+    load_labels
+    load_books
     loop do
       operation0
     end
@@ -44,7 +64,7 @@ class App
     option = gets.chomp.to_i
     case option
     when 1
-      'list all books'
+      list_all_books
     when 2
       'list all music albums'
     when 3
@@ -67,7 +87,7 @@ class App
     when 1
       'list all genres'
     when 2
-      'list all labels'
+      list_all_labels
     when 3
       'list all authors'
     when 4
@@ -86,7 +106,7 @@ class App
     option = gets.chomp.to_i
     case option
     when 1
-      'add book'
+      add_book
     when 2
       'add music album'
     when 3
