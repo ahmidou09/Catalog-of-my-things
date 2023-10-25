@@ -36,4 +36,14 @@ module CreateCategory
     @authors << new_author
     new_author
   end
+
+  def create_genre(item_add)
+    print "Enter the #{item_add} genre: "
+    name = gets.chomp
+    new_genre = Genre.new(name)
+    return @genres.select { |genre| genre.name == name } if @genres.one? { |genre| genre.name == name }
+
+    @genres << new_genre
+    new_genre
+  end
 end

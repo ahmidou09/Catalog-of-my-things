@@ -33,4 +33,15 @@ module ListItems
       end
     end
   end
+
+  def list_all_genres
+    if @genres.empty?
+      puts 'The genre list is empty.'
+    else
+      print 'Genre: '
+      @genres.each_with_index do |genre, index|
+        puts "#{index + 1}) ID: #{genre.id}, Name: #{genre.name}"
+      end
+    end
+  end
 end

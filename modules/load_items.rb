@@ -45,4 +45,14 @@ module LoadItems
       @albums << new_album
     end
   end
+
+  def load_genres
+    return unless File.exist?('data/genres.json')
+
+    file = File.read('data/genres.json')
+    genres_hash = JSON.parse(file)
+    genres_hash.each do |genre|
+      @genres << Genre.new(genre['name'])
+    end
+  end
 end

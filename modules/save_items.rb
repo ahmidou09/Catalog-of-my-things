@@ -1,6 +1,7 @@
 require 'json'
 require './classes/book/book'
 require './classes/game/game'
+require './classes/genre/genre'
 
 module SaveItems
   def save_book
@@ -37,6 +38,15 @@ module SaveItems
           'publish_date' => album.publish_date,
           'label_id' => album.label.id,
           'author_id' => album.author.id }
+      }.to_json
+    end
+  end
+
+  def save_genre
+    File.open('./data/genres.json', 'w') do |file|
+      file.puts @genres.map { |genre|
+        { 'id' => genre.id,
+          'name' => genre.name }
       }.to_json
     end
   end
