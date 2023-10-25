@@ -67,7 +67,6 @@ module CreateItems
   end
 
   def add_album
-    # on_spotify, publish_date
     print 'Enter the album\'s publish date: '
     publish_date = gets.chomp
     print 'Say if on spotify(Yes/No): '

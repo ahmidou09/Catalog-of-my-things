@@ -28,4 +28,17 @@ module SaveItems
       }.to_json
     end
   end
+
+  def save_album
+    File.open('./data/music_albums.json', 'w') do |file|
+      file.puts @albums.map { |album|
+        { 'id' => album.id,
+          'on_spotify' => album.on_spotify,
+          'publish_date' => album.publish_date,
+          'last_played_at' => album.last_played_at,
+          'label_id' => album.label.id,
+          'author_id' => album.author.id }
+      }.to_json
+    end
+  end
 end

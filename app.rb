@@ -128,6 +128,7 @@ class App
     save_book
     save_author
     save_game
+    save_album
     puts 'Thank you for using the app!'
     exit
   end
