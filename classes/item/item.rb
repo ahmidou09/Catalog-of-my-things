@@ -19,10 +19,6 @@ class Item
     @author = author
   end
 
-  def add_source(source)
-    @source = source
-  end
-
   def add_genre(genre)
     @genre = genre
   end
