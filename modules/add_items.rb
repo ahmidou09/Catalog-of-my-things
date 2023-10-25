@@ -1,5 +1,5 @@
-require './classes/book'
-require './classes/label'
+require './classes/book/book'
+require './classes/label/label'
 require_relative 'add_category'
 
 module CreateItems

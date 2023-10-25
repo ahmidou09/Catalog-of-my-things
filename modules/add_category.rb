@@ -1,4 +1,4 @@
-require './classes/label'
+require './classes/label/label'
 
 module CreateCategory
   def create_label(item_add)

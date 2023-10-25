@@ -1,5 +1,5 @@
 require 'json'
-require './classes/book'
+require './classes/book/book'
 
 module SaveItems
   def save_book

@@ -1,5 +1,5 @@
 require 'json'
-require './classes/label'
+require './classes/label/label'
 
 module LoadCategories
   def load_labels
