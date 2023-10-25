@@ -1,4 +1,5 @@
 require './classes/label/label'
+require './classes/author/author'
 
 module CreateCategory
   def create_label(item_add)
@@ -16,5 +17,23 @@ module CreateCategory
       @labels << new_label
       new_label
     end
+  end
+
+  def create_author
+    print 'Enter the author\'s first name: '
+    first_name = gets.chomp
+    print 'Enter the author\'s last name: '
+    last_name = gets.chomp
+    new_author = Author.new(first_name, last_name)
+    if @authors.one? do |author|
+         author.first_name == first_name && author.last_name == last_name
+       end
+      return @authors.select do |author|
+               author.first_name == first_name && author.last_name == last_name
+             end
+    end
+
+    @authors << new_author
+    new_author
   end
 end
