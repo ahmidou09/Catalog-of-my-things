@@ -1,7 +1,7 @@
 require 'date'
 
 class Item
-  attr_accessor :author, :label, :publish_date, :genre
+  attr_accessor :author, :label, :publish_date, :genre, :source
   attr_reader :id, :archived
 
   def initialize(publish_date)
@@ -17,6 +17,10 @@ class Item
 
   def add_author(author)
     @author = author
+  end
+
+  def add_source(source)
+    @source = source
   end
 
   def add_genre(genre)
