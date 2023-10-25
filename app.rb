@@ -30,6 +30,7 @@ class App
     load_authors
     load_books
     load_games
+    load_music_albums
     loop do
       operation0
     end

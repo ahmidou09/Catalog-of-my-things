@@ -35,7 +35,6 @@ module SaveItems
         { 'id' => album.id,
           'on_spotify' => album.on_spotify,
           'publish_date' => album.publish_date,
-          'last_played_at' => album.last_played_at,
           'label_id' => album.label.id,
           'author_id' => album.author.id }
       }.to_json

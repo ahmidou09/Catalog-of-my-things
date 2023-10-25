@@ -33,4 +33,16 @@ module LoadItems
     saved_author = @authors.find { |el| el.id == author_id }
     item.add_author(saved_author)
   end
+
+  def load_music_albums
+    return unless File.exist?('../data/music_albums.json')
+
+    file = File.read('../data/music_albums.json')
+    albums_hash = JSON.parse(file)
+    albums_hash.each do |album|
+      new_album = Game.new(album['on_spotify'], album['publish_date'], album['id'])
+      search_categories(album['label_id'], album['author_id'], new_album)
+      @albums << new_album
+    end
+  end
 end
