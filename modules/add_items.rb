@@ -50,4 +50,18 @@ module CreateItems
     @games << new_game
     puts 'The game was created successfully'
   end
+
+  def multiplayer_input
+    print 'Is it a multiplayer game? (yes, no): '
+    multiplayer = gets.chomp
+    if multiplayer == 'yes'
+      multiplayer = true
+    elsif multiplayer == 'no'
+      multiplayer = false
+    else
+      puts 'Invalid option'
+      multiplayer = false
+    end
+    multiplayer
+  end
 end
