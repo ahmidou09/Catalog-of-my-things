@@ -113,7 +113,7 @@ class App
     when 1
       add_book
     when 2
-      'add music album'
+      add_album
     when 3
       add_game
     when 4

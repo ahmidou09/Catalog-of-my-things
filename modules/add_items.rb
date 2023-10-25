@@ -2,6 +2,7 @@ require './classes/book/book'
 require './classes/label/label'
 require './classes/author/author'
 require './classes/game/game'
+require './classes/music_album/music_album'
 require_relative 'add_category'
 
 module CreateItems
@@ -63,5 +64,20 @@ module CreateItems
       multiplayer = false
     end
     multiplayer
+  end
+
+  def add_album
+    # on_spotify, publish_date
+    print 'Enter the album\'s publish date: '
+    publish_date = gets.chomp
+    print 'Say if on spotify(Yes/No): '
+    on_spotify = gets.chomp
+    author = create_author
+    label = create_label('music_album')
+    album = MusicAlbum.new(on_spotify, publish_date)
+    album.add_author(author)
+    album.add_label(label)
+    @albums << album
+    puts 'The music album was created successfully'
   end
 end

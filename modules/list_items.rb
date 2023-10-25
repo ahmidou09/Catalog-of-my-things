@@ -29,7 +29,7 @@ module ListItems
       print 'Music Albums: '
       @albums.each_with_index do |album, index|
         puts "#{index + 1}) ID: #{album.id}, Publish date: #{album.publish_date}"
-        puts "   Author: #{album.author}, Published at: #{album.publish_date}\n"
+        puts "   On spotify: #{album.on_spotify}, Published at: #{album.publish_date}\n"
       end
     end
   end
