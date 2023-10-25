@@ -21,6 +21,7 @@ class App
     @labels = []
     @books = []
     @games = []
+    @albums = []
   end
 
   def run
@@ -70,7 +71,7 @@ class App
     when 1
       list_all_books
     when 2
-      'list all music albums'
+      list_all_albums
     when 3
       list_all_games
     when 4

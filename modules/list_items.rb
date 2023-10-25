@@ -21,4 +21,16 @@ module ListItems
       end
     end
   end
+
+  def list_all_albums
+    if @albums.empty?
+      puts 'The music albums list is empty.'
+    else
+      print 'Music Albums: '
+      @albums.each_with_index do |album, index|
+        puts "#{index + 1}) ID: #{album.id}, Publish date: #{album.publish_date}"
+        puts "   Author: #{album.author}, Published at: #{album.publish_date}\n"
+      end
+    end
+  end
 end
