@@ -17,14 +17,18 @@ class App
 
   def initialize
     @items = []
+    @authors = []
     @labels = []
     @books = []
+    @games = []
   end
 
   def run
     puts 'Welcome to our catalog!'
     load_labels
+    load_authors
     load_books
+    load_games
     loop do
       operation0
     end
@@ -68,7 +72,7 @@ class App
     when 2
       'list all music albums'
     when 3
-      'list all games'
+      list_all_games
     when 4
       operation0
     else
@@ -89,7 +93,7 @@ class App
     when 2
       list_all_labels
     when 3
-      'list all authors'
+      list_all_authors
     when 4
       operation0
     else
@@ -110,7 +114,7 @@ class App
     when 2
       'add music album'
     when 3
-      'add game'
+      add_game
     when 4
       operation0
     else
@@ -119,6 +123,10 @@ class App
   end
 
   def exit_app
+    save_label
+    save_book
+    save_author
+    save_game
     puts 'Thank you for using the app!'
     exit
   end
