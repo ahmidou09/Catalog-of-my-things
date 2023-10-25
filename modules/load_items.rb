@@ -35,12 +35,12 @@ module LoadItems
   end
 
   def load_music_albums
-    return unless File.exist?('../data/music_albums.json')
+    return unless File.exist?('./data/music_albums.json')
 
-    file = File.read('../data/music_albums.json')
+    file = File.read('./data/music_albums.json')
     albums_hash = JSON.parse(file)
     albums_hash.each do |album|
-      new_album = Game.new(album['on_spotify'], album['publish_date'], album['id'])
+      new_album = MusicAlbum.new(album['on_spotify'], album['publish_date'])
       search_categories(album['label_id'], album['author_id'], new_album)
       @albums << new_album
     end
