@@ -1,7 +1,6 @@
 require_relative '../classes/genre/genre'
 require_relative '../classes/item/item'
 
-
 describe Genre do
   let(:genre_name) { 'Action' }
   let(:genre) { Genre.new(genre_name) }

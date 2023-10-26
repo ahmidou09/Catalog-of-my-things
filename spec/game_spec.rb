@@ -2,7 +2,6 @@ require_relative '../classes/game/game'
 require_relative '../classes/author/author'
 require_relative '../classes/label/label'
 
-
 describe Game do
   let(:publish_date) { '2022-10-26' }
   let(:multiplayer) { true }

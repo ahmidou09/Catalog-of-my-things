@@ -1,7 +1,6 @@
 require_relative '../classes/music_album/music_album'
 require_relative '../classes/item/item'
 
-
 describe MusicAlbum do
   let(:on_spotify) { true }
   let(:publish_date) { '2022-10-26' }
