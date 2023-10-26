@@ -21,6 +21,8 @@ class App
     @labels = []
     @books = []
     @games = []
+    @albums = []
+    @genres = []
   end
 
   def run
@@ -29,6 +31,8 @@ class App
     load_authors
     load_books
     load_games
+    load_music_albums
+    load_genres
     loop do
       operation0
     end
@@ -70,7 +74,7 @@ class App
     when 1
       list_all_books
     when 2
-      'list all music albums'
+      list_all_albums
     when 3
       list_all_games
     when 4
@@ -89,7 +93,7 @@ class App
     option = gets.chomp.to_i
     case option
     when 1
-      'list all genres'
+      list_all_genres
     when 2
       list_all_labels
     when 3
@@ -112,7 +116,7 @@ class App
     when 1
       add_book
     when 2
-      'add music album'
+      add_album
     when 3
       add_game
     when 4
@@ -127,6 +131,8 @@ class App
     save_book
     save_author
     save_game
+    save_album
+    save_genre
     puts 'Thank you for using the app!'
     exit
   end

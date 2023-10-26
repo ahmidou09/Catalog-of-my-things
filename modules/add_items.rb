@@ -2,6 +2,8 @@ require './classes/book/book'
 require './classes/label/label'
 require './classes/author/author'
 require './classes/game/game'
+require './classes/music_album/music_album'
+require './classes/genre/genre'
 require_relative 'add_category'
 
 module CreateItems
@@ -63,5 +65,29 @@ module CreateItems
       multiplayer = false
     end
     multiplayer
+  end
+
+  def add_album
+    print 'Enter the album\'s publish date: '
+    publish_date = gets.chomp
+    print 'Say if on spotify(Yes/No): '
+    on_spotify = gets.chomp
+    author = create_author
+    genre = create_genre('music_album')
+    label = create_label('music_album')
+    album = MusicAlbum.new(on_spotify, publish_date)
+    album.add_author(author)
+    album.add_label(label)
+    album.add_genre(genre)
+    @albums << album
+    puts 'The music album was created successfully'
+  end
+
+  def add_genre
+    print 'Enter the genre\'s name: '
+    name = gets.chomp
+    genre = Genre.new(name)
+    @genres << genre
+    puts 'The genre was created successfully'
   end
 end
