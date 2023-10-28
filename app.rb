@@ -25,29 +25,16 @@ class App
     @genres = []
   end
 
-  def run
-    puts 'Welcome to our catalog!'
+  def load_all_items
     load_labels
     load_authors
     load_books
     load_games
     load_music_albums
     load_genres
-    loop do
-      operation0
-    end
   end
 
-  def show_menu
-    puts " \n Select an option by number:"
-    puts '1) List items (books, music albums or games)'
-    puts '2) List categories (genres, labels or authors)'
-    puts '3) Add items (book, music album or game)'
-    puts '4) Exit'
-  end
-
-  def operation0
-    show_menu
+  def launch
     user_input = gets.chomp.to_i
     case user_input
     when 1
@@ -78,7 +65,7 @@ class App
     when 3
       list_all_games
     when 4
-      operation0
+      launch
     else
       puts 'Invalid option'
     end
@@ -99,7 +86,7 @@ class App
     when 3
       list_all_authors
     when 4
-      operation0
+      launch
     else
       puts 'Invalid option'
     end
@@ -120,7 +107,7 @@ class App
     when 3
       add_game
     when 4
-      operation0
+      launch
     else
       puts 'Invalid option'
     end
